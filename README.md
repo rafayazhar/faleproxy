@@ -88,3 +88,9 @@ To enable automatic deployments to Vercel, you need to:
 - Cheerio - HTML parsing and manipulation
 - Vanilla JavaScript for frontend functionality
 - Jest, Supertest, and Nock for testing
+
+
+## Feature Added: Add http:// if no protocol is specified (from lecture slides)
+
+Note: Run the tests using the command "npm test -- tests/url-protocol.test.js" 
+

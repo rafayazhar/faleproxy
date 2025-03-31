@@ -11,11 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
     urlForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        const url = urlInput.value.trim();
+        let url = urlInput.value.trim();
         
         if (!url) {
             showError('Please enter a valid URL');
             return;
+        }
+        
+        // Ensure URL has a protocol
+        if (!url.match(/^https?:\/\//i)) {
+            url = `https://${url}`;
+            urlInput.value = url; // Update the input field with the protocol
         }
         
         // Show loading indicator
@@ -39,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             // Update the info bar
-            originalUrlElement.textContent = url;
-            originalUrlElement.href = url;
+            originalUrlElement.textContent = data.originalUrl || url;
+            originalUrlElement.href = data.originalUrl || url;
             pageTitleElement.textContent = data.title || 'No title';
             
             // Create a sandboxed iframe to display the content
