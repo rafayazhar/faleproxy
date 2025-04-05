@@ -92,7 +92,5 @@ To enable automatic deployments to Vercel, you need to:
 
 ## Feature Added: Add http:// if no protocol is specified (from lecture slides)
 
-Note: Run the tests using the command "npm test -- tests/url-protocol.test.js" 
+Note: Run the tests for my change from Homework 8 using the command "npm test -- tests/url-protocol.test.js" 
 
-minor change for testing 
-another minor change for testing 
